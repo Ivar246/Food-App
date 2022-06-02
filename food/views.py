@@ -26,7 +26,6 @@ def create_item(request):
     form = ItemForm(request.POST or None)
     
     if form.is_valid():
-        print(form.is_valid())
         form.save()
         return redirect('food:index')
     return render(request, 'food/item-form.html', {'form': form})
